@@ -1,9 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Modal from "./Modal";
 const Header = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+useEffect(() => {
+  const loginParam = searchParams.get("login");
+  if(loginParam === 'true'){
+setModalOpen(true)
+  }
+})
+const handleCloseModal = () => {
+  setModalOpen(false)
+  const params = new URLSearchParams(searchParams);
+  params.delete("login")
+  navigate({
+    pathname: window.location?.pathname,
+    search: params.toString()
+  })
+}
   return (
     <div>
       <header className="text-white body-font bg-green-500">
@@ -47,7 +63,7 @@ const Header = () => {
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
-          <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+          <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
             {/* <p className="text-white">This is the content of the modal.</p> */}
             <div class="p-4 md:p-5">
               <form class="space-y-4" action="#">
@@ -102,7 +118,7 @@ const Header = () => {
                     </label>
                   </div>
                   <Link
-                    href="#"
+                    to="/reset-password"
                     class="text-sm text-blue-700 hover:underline dark:text-blue-500"
                   >
                     Lost Password?
@@ -117,7 +133,7 @@ const Header = () => {
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
                   Not registered?{" "}
                   <Link
-                    href="#"
+                    to="create-account"
                     class="text-blue-700 hover:underline dark:text-blue-500"
                   >
                     Create account
