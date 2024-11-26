@@ -7,7 +7,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
