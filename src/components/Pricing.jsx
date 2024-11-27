@@ -1,6 +1,49 @@
 import React from "react";
 
 const Pricing = () => {
+
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
+  const handlePayment = async (price) => {
+    const isLoaded = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
+    if (!isLoaded) {
+      alert('Failed to load Razorpay SDK. Please check your connection.');
+      return;
+    }
+
+    const options = {
+      key: 'rzp_test_OSTW4yBBpF7tlV', // Replace with your Razorpay Key ID
+      amount: price*100, // Amount in paise (e.g., 50000 paise = ₹500)
+      currency: 'INR',
+      name: 'Jata Pushp',
+      description: 'Test Transaction',
+      image: 'https://your-logo-url.com/logo.png', // Optional: Replace with your logo
+      handler: (response) => {
+        alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
+        console.log(response);
+      },
+      prefill: {
+        name: 'John Doe',
+        email: 'john.doe@example.com',
+        contact: '9999999999', // Pre-fill customer details (optional)
+      },
+      theme: {
+        color: '#22c55e00', // Customize the theme color
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
+
   return (
     <>
       <section className="text-white bg-green-500 body-font overflow-hidden">
@@ -17,60 +60,13 @@ const Pricing = () => {
             <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
               <div className="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
                 <h1 className="text-5xl text-white leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>₹350</span>
+                  <span>₹400</span>
                   <span className="text-lg ml-1 font-normal text-white">
-                    /500ml
+                    /250ml
                   </span>
                 </h1>
-                {/* <p className="flex items-center text-white mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-white text-green-500 rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Vexillologist pitchfork
-                </p>
-                <p className="flex items-center text-white mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-white text-green-500 rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Tumeric plaid portland
-                </p>
-                <p className="flex items-center text-white mb-6">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-white text-green-500 rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Mixtape chillwave tumeric
-                </p> */}
-                <button className="flex items-center mt-auto text-green-500 bg-white border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
+                
+                <button onClick={() => handlePayment(400)} className="flex items-center mt-auto text-green-500 bg-white border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
                   Claim Your Bottle
                   <svg
                     fill="none"
@@ -92,76 +88,12 @@ const Pricing = () => {
             <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
               <div className="h-full p-6 rounded-lg border-2 border-white flex flex-col relative overflow-hidden">
                 <h1 className="text-5xl text-white leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>₹680</span>
+                  <span>₹800</span>
                   <span className="text-lg ml-1 font-normal text-white">
-                    /ltr
+                    /500ml
                   </span>
                 </h1>
-                {/* <p className="flex items-center text-white mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-white text-green-500 rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Vexillologist pitchfork
-                </p>
-                <p className="flex items-center text-white mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-white text-green-500 rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Tumeric plaid portland
-                </p>
-                <p className="flex items-center text-white mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-white text-green-500 rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Hexagon neutra unicorn
-                </p>
-                <p className="flex items-center text-white mb-6">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-white text-green-500 rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Mixtape chillwave tumeric
-                </p> */}
-                <button className="flex items-center mt-auto bg-white text-green-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-green-600 rounded">
+                  <button onClick={() => handlePayment(800)} className="flex items-center mt-auto bg-white text-green-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-green-600 rounded">
                   Claim Your Bottle
                   <svg
                     fill="none"
