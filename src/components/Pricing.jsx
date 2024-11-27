@@ -1,4 +1,5 @@
 import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Pricing = () => {
 
@@ -27,13 +28,18 @@ const Pricing = () => {
       description: 'Test Transaction',
       image: 'https://your-logo-url.com/logo.png', // Optional: Replace with your logo
       handler: (response) => {
-        alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
+          toast.success(`Payment successful! Payment ID: ${response.razorpay_payment_id}`, {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+          });
+        // alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
         console.log(response);
       },
       prefill: {
         name: 'John Doe',
         email: 'john.doe@example.com',
-        contact: '9999999999', // Pre-fill customer details (optional)
+        contact: '8360352730', // Pre-fill customer details (optional)
       },
       theme: {
         color: '#22c55e00', // Customize the theme color
@@ -114,6 +120,7 @@ const Pricing = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </section>
     </>
   );
