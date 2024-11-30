@@ -1,55 +1,50 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-const SignUp = () => {
-  const [name, setName] = useState();
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import { useAuth } from "./AuthContext";
+
+const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [phone, setPhone] = useState();
+  const { setIsAuthenticated } = useAuth(); // Get the context function  const navigate = useNavigate();
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     debugger;
     e.preventDefault();
     axios
-      .post("http://localhost:8080/register", { name, email, password, phone })
+      .post("http://localhost:8080/login", { email, password })
       .then((result) => {
         console.log(result);
-        navigate("/login");
+        if (result.data === "Success!") {
+          handleClick();
+          setIsAuthenticated(true); // Update the context state
+          setTimeout(() => navigate("/"), 2000); // Redirect after 2 seconds
+        } else {
+          console.log("Something went wrong");
+        }
       })
       .catch((err) => console.log(err));
   };
-
+  const handleClick = () => {
+    toast.success("Logged In!", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+    });
+  };
   return (
     <>
       <Helmet>
-        <title>Signup - Jata Pushp</title>
+        <title>Login - Jata Pushp</title>
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="bg-white shadow-md rounded-lg p-6 md:p-8 w-full max-w-md">
           <h2 className="text-2xl font-bold text-center text-green-600 mb-6">
-            Sign Up
+            Login
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-700"
-              >
-                User name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                placeholder="name"
-                required
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
             <div>
               <label
                 htmlFor="email"
@@ -84,43 +79,33 @@ const SignUp = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div>
-              <label
-                htmlFor="number"
-                className="block mb-2 text-sm font-medium text-gray-700"
-              >
-                Phone number
-              </label>
-              <input
-                type="tel"
-                id="number"
-                name="number"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                placeholder="+91 123-456-7890"
-                required
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </div>
             <button
               type="submit"
               className="w-full bg-green-500 text-white py-2.5 rounded-md font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             >
-              Sign up
+              Login
             </button>
+            <Link
+              to="/reset-password"
+              class="text-sm text-green-500 hover:underline"
+            >
+              Lost Password?
+            </Link>
             <p className="text-center text-sm text-gray-600">
-              Already registered?{" "}
+              Create account?{" "}
               <Link
-                to="/login"
+                to="/create-account"
                 className="text-green-500 font-medium hover:underline"
               >
-                Login
+                Sign up
               </Link>
             </p>
           </form>
+          <ToastContainer />
         </div>
       </div>
     </>
   );
 };
 
-export default SignUp;
+export default Login;
