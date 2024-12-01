@@ -14,7 +14,12 @@ const SignUp = () => {
     debugger;
     e.preventDefault();
     axios
-      .post("http://localhost:8080/register", { name, email, password, phone })
+      .post("https://jata-pushp-backend-3.onrender.com/register", {
+        name,
+        email,
+        password,
+        phone,
+      })
       .then((result) => {
         console.log(result);
         navigate("/login");

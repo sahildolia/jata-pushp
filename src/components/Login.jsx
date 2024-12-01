@@ -14,7 +14,10 @@ const Login = () => {
     debugger;
     e.preventDefault();
     axios
-      .post("http://localhost:8080/login", { email, password })
+      .post("https://jata-pushp-backend-3.onrender.com/login", {
+        email,
+        password,
+      })
       .then((result) => {
         console.log(result);
         if (result.data === "Success!") {
