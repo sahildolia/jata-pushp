@@ -47,11 +47,19 @@ const Testimonial = () => {
 
   return (
     <>
-      <section className="text-gray-600 body-font bg-green-500 overflow-hidden">
+      <section
+        id="review"
+        className="text-gray-600 body-font bg-green-500 overflow-hidden"
+      >
         <div className="container px-5 py-24 mx-auto">
-          <h1 className="text-3xl font-medium title-font text-white mb-12 text-center">
-            Testimonials
-          </h1>
+          <div className="flex flex-col text-center w-full mb-12">
+            <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-white">
+              Testimonials
+            </h1>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-white">
+              Because Your Trust is Our Greatest Reward
+            </p>
+          </div>
           <div className="flex overflow-hidden">
             <div
               className="flex transition-transform duration-700 ease-in-out"

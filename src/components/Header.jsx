@@ -28,10 +28,21 @@ const Header = () => {
             <span className="ml-3 text-xl text-white">Jata Pushp</span>
           </Link>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <Link className="mr-5 hover:text-gray-900">Home</Link>
-            <Link className="mr-5 hover:text-gray-900">Why Us</Link>
-            <Link className="mr-5 hover:text-gray-900">About Us</Link>
-            <Link className="mr-5 hover:text-gray-900">Contact</Link>
+            <a href="#home" className="mr-5 hover:text-gray-900">
+              Home
+            </a>
+            <a href="#why-us" className="mr-5 hover:text-gray-900">
+              Why Us
+            </a>
+            <a href="#review" className="mr-5 hover:text-gray-900">
+              Reviews
+            </a>
+            <a href="#pricing" className="mr-5 hover:text-gray-900">
+              Price
+            </a>
+            <a href="#contact" className="mr-5 hover:text-gray-900">
+              Contact
+            </a>
           </nav>
           <button
             onClick={handleNavigate}

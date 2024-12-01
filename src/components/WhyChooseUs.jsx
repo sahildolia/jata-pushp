@@ -3,12 +3,16 @@ import React from "react";
 const WhyChooseUs = () => {
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section id="why-us" className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+          <div className="flex flex-col text-center w-full mb-12">
+            <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
               Why Choose Us?
             </h1>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-900">
+              Because Your Beauty Deserves the Best—Here’s Why We’re the Right
+              Choice
+            </p>
           </div>
           <div className="flex flex-wrap -m-4">
             <div className="p-4 md:w-1/3">
@@ -28,13 +32,15 @@ const WhyChooseUs = () => {
                     </svg>
                   </div>
                   <h2 className="text-gray-900 text-lg title-font font-medium">
-                    Shooting Stars
+                    Safe and Side-Effect Free
                   </h2>
                 </div>
                 <div className="flex-grow">
                   <p className="leading-relaxed text-base">
-                    Blue bottle crucifix vinyl post-ironic four dollar toast
-                    vegan taxidermy. Gastropub indxgo juice poutine.
+                    Your safety is our priority. Our formulations are
+                    dermatologically tested and crafted to provide effective
+                    results without any harmful side effects, ensuring care you
+                    can trust.
                   </p>
                 </div>
               </div>
@@ -57,13 +63,15 @@ const WhyChooseUs = () => {
                     </svg>
                   </div>
                   <h2 className="text-gray-900 text-lg title-font font-medium">
-                    The Catalyzer
+                    Sustainably Handcrafted
                   </h2>
                 </div>
                 <div className="flex-grow">
                   <p className="leading-relaxed text-base">
-                    Blue bottle crucifix vinyl post-ironic four dollar toast
-                    vegan taxidermy. Gastropub indxgo juice poutine.
+                    Every product is made with care, following traditional
+                    recipes and sustainable practices. From sourcing ingredients
+                    to packaging, we ensure quality that respects you and the
+                    environment. Let me know if this works! 😊
                   </p>
                 </div>
               </div>
@@ -87,13 +95,15 @@ const WhyChooseUs = () => {
                     </svg>
                   </div>
                   <h2 className="text-gray-900 text-lg title-font font-medium">
-                    Neptune
+                    Gentle Care, Zero Compromises
                   </h2>
                 </div>
                 <div className="flex-grow">
                   <p className="leading-relaxed text-base">
-                    Blue bottle crucifix vinyl post-ironic four dollar toast
-                    vegan taxidermy. Gastropub indxgo juice poutine.
+                    We believe in the power of nature. All our products are
+                    crafted using pure, natural ingredients like hibiscus
+                    flower, onion, and coconut oil—free from harsh chemicals or
+                    synthetic additives.
                   </p>
                 </div>
               </div>

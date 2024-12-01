@@ -1,11 +1,10 @@
 import React from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 const Pricing = () => {
-
   const loadScript = (src) => {
     return new Promise((resolve) => {
-      const script = document.createElement('script');
+      const script = document.createElement("script");
       script.src = src;
       script.onload = () => resolve(true);
       script.onerror = () => resolve(false);
@@ -14,35 +13,40 @@ const Pricing = () => {
   };
 
   const handlePayment = async (price) => {
-    const isLoaded = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
+    const isLoaded = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
     if (!isLoaded) {
-      alert('Failed to load Razorpay SDK. Please check your connection.');
+      alert("Failed to load Razorpay SDK. Please check your connection.");
       return;
     }
 
     const options = {
-      key: 'rzp_test_OSTW4yBBpF7tlV', // Replace with your Razorpay Key ID
-      amount: price*100, // Amount in paise (e.g., 50000 paise = ₹500)
-      currency: 'INR',
-      name: 'Jata Pushp',
-      description: 'Test Transaction',
-      image: 'https://your-logo-url.com/logo.png', // Optional: Replace with your logo
+      key: "rzp_test_OSTW4yBBpF7tlV", // Replace with your Razorpay Key ID
+      amount: price * 100, // Amount in paise (e.g., 50000 paise = ₹500)
+      currency: "INR",
+      name: "Jata Pushp",
+      description: "Test Transaction",
+      image: "https://your-logo-url.com/logo.png", // Optional: Replace with your logo
       handler: (response) => {
-          toast.success(`Payment successful! Payment ID: ${response.razorpay_payment_id}`, {
-            position: 'top-right',
+        toast.success(
+          `Payment successful! Payment ID: ${response.razorpay_payment_id}`,
+          {
+            position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
-          });
+          }
+        );
         // alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
         console.log(response);
       },
       prefill: {
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        contact: '8360352730', // Pre-fill customer details (optional)
+        name: "John Doe",
+        email: "john.doe@example.com",
+        contact: "8360352730", // Pre-fill customer details (optional)
       },
       theme: {
-        color: '#22c55e00', // Customize the theme color
+        color: "#22c55e00", // Customize the theme color
       },
     };
 
@@ -52,14 +56,18 @@ const Pricing = () => {
 
   return (
     <>
-      <section className="text-white bg-green-500 body-font overflow-hidden">
+      <section
+        id="pricing"
+        className="text-white bg-green-500 body-font overflow-hidden"
+      >
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-white">
               Pricing
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-white">
-              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical.
+              Find the Perfect Blend of Nature and Affordability with Pricing
+              That Matches Your Needs
             </p>
           </div>
           <div className="flex flex-wrap -m-4 justify-center">
@@ -71,8 +79,11 @@ const Pricing = () => {
                     /250ml
                   </span>
                 </h1>
-                
-                <button onClick={() => handlePayment(400)} className="flex items-center mt-auto text-green-500 bg-white border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
+
+                <button
+                  onClick={() => handlePayment(400)}
+                  className="flex items-center mt-auto text-green-500 bg-white border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded"
+                >
                   Claim Your Bottle
                   <svg
                     fill="none"
@@ -99,7 +110,10 @@ const Pricing = () => {
                     /500ml
                   </span>
                 </h1>
-                  <button onClick={() => handlePayment(800)} className="flex items-center mt-auto bg-white text-green-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-green-600 rounded">
+                <button
+                  onClick={() => handlePayment(800)}
+                  className="flex items-center mt-auto bg-white text-green-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-green-600 rounded"
+                >
                   Claim Your Bottle
                   <svg
                     fill="none"

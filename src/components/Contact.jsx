@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <>
-      <section className="text-gray-600 body-font relative">
+      <section id="contact" className="text-gray-600 body-font relative">
         <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
             <iframe
@@ -24,8 +24,8 @@ const Contact = () => {
                   ADDRESS
                 </h2>
                 <p className="mt-1">
-                  Photo booth tattooed prism, portland taiyaki hoodie neutra
-                  typewriter
+                  Bombay Beauty Salon, Bassi Pathana Opp. Post Office, Distt.
+                  Fatehgarh Sahib, Punjab, India
                 </p>
               </div>
               <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
@@ -33,12 +33,12 @@ const Contact = () => {
                   EMAIL
                 </h2>
                 <Link className="text-green-500 leading-relaxed">
-                  example@email.com
+                  vishudolia706@gmail.com
                 </Link>
                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                   PHONE
                 </h2>
-                <p className="leading-relaxed">123-456-7890</p>
+                <p className="leading-relaxed">628-466-2247</p>
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@ const Contact = () => {
               Feedback
             </h2>
             <p className="leading-relaxed mb-5 text-gray-600">
-              Post-ironic portland shabby chic echo park, banjo fashion axe
+              Your Thoughts Matter—Help Us Improve and Serve You Best
             </p>
             <div className="relative mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">
@@ -91,8 +91,7 @@ const Contact = () => {
               Button
             </button>
             <p className="text-xs text-gray-500 mt-3">
-              Chicharrones blog helvetica normcore iceland tousled brook viral
-              artisan.
+              Help Us Serve You Better—We’d Love to Hear from You
             </p>
           </div>
         </div>

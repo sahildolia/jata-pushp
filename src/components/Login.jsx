@@ -90,7 +90,7 @@ const Login = () => {
             </button>
             <Link
               to="/reset-password"
-              class="text-sm text-green-500 hover:underline"
+              className="text-sm text-green-500 hover:underline"
             >
               Lost Password?
             </Link>
