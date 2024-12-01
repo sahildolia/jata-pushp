@@ -8,24 +8,29 @@ const Testimonial = () => {
 
   const testimonials = [
     {
-      text: "Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.",
-      name: "Holden Caulfield",
-      role: "UI DEVELOPER",
+      text: "Hi yr main oil use kita bht vadiya result ha mere hair pehla nalo silky or hair fall v kut ho gaya bht vadiya oil ha thankew so much 🥰👍",
+      name: "Happy customer",
+      role: "Hidden name",
     },
     {
-      text: "Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.",
-      name: "Alper Kamu",
-      role: "DESIGNER",
+      text: "Main oil 4,5 bar use kra ji bot vdya results aye aa ji mera hair ch growth vi bot vdya hoo rye aa mnu oil bot vdya lga aa tysm didi ana vdya oil provid krn lye  ❤❤",
+      name: "Happy customer",
+      role: "Hidden name",
     },
     {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat dui vel libero feugiat, ac egestas arcu interdum.",
-      name: "Jane Doe",
-      role: "PROJECT MANAGER",
+      text: "Hy vishu .....jo tusi oil ditaa si sachii oo bhutt achaa si 1 month ho Gaya Sanu oil use karde nu or hair foll bhut khaat ho gyà or hair silky ho gayee or growth vi bhutt ho Gai he thank you so much is oil Lai thank you so much matlab enaa vadiya oil ee hee manu bhutt vadiya result milyaa he thank you thode enee vadiya oil Lai ....🥰🥰🥰🥰🥰🥰",
+      name: "Happy customer",
+      role: "Hidden name",
     },
     {
-      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-      name: "John Smith",
-      role: "DEVELOPER",
+      text: "Mam tohda oil mai 23 days phla lita c mnu 23 days ch boht bdia results aaye teh mere hairs di growth v hoggi🥹+ hairfall v khtm hogeyaa bs dead hairs hii niklde + shinning v aahgi g hairs teh♥ thank you so much mam rubberband v fisal jnda ehne silky hairs hogge🥰 bs mera tohde krke hairsfall ght gya mere bohtt hairfall hundii c  thank you 🙏🏻♥🥹",
+      name: "Happy customer",
+      role: "Hidden name",
+    },
+    {
+      text: "Mam oil 4-5 vaar use kite aa boht bdia results aaye aa ji mere hairs growth v bohtt ho rhii aa mere bohtt vdia hairs ho gye tysm didi ehna vdia oil provide krn lyi❤👍🏻",
+      name: "Happy customer",
+      role: "Hidden name",
     },
   ];
 
