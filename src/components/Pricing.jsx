@@ -98,7 +98,22 @@ const Pricing = () => {
                   </svg>
                 </button>
                 <p className="text-xs text-white mt-3">
-                  Literally you probably haven't heard of them jean shorts.
+                &#10003; Strengthens Hair Roots
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10003; Boosts Hair Volume Naturally
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10003; Removes Dandruff Effectively
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10003; Gentle for All Hair Types
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10008; Increase Hair Volume in 2 Uses? Patience Pays Off.
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10008; Harsh Chemicals? Absolutely None.
                 </p>
               </div>
             </div>
@@ -128,7 +143,22 @@ const Pricing = () => {
                   </svg>
                 </button>
                 <p className="text-xs text-white mt-3">
-                  Literally you probably haven't heard of them jean shorts.
+                &#10003; Strengthens Hair Roots
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10003; Boosts Hair Volume Naturally
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10003; Removes Dandruff Effectively
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10003; Gentle for All Hair Types
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10008; Increase Hair Volume in 2 Uses? Patience Pays Off.
+                </p>
+                <p className="text-xs text-white mt-3">
+                &#10008; Harsh Chemicals? Absolutely None.
                 </p>
               </div>
             </div>
