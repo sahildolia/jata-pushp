@@ -10,27 +10,27 @@ const Testimonial = () => {
     {
       text: "Hi yr main oil use kita bht vadiya result ha mere hair pehla nalo silky or hair fall v kut ho gaya bht vadiya oil ha thankew so much 🥰👍",
       name: "Happy customer",
-      role: "Hidden name",
+      role: "Confident Hair Owner",
     },
     {
       text: "Main oil 4,5 bar use kra ji bot vdya results aye aa ji mera hair ch growth vi bot vdya hoo rye aa mnu oil bot vdya lga aa tysm didi ana vdya oil provid krn lye  ❤❤",
       name: "Happy customer",
-      role: "Hidden name",
+      role: "Confident Hair Owner",
     },
     {
       text: "Hy vishu .....jo tusi oil ditaa si sachii oo bhutt achaa si 1 month ho Gaya Sanu oil use karde nu or hair foll bhut khaat ho gyà or hair silky ho gayee or growth vi bhutt ho Gai he thank you so much is oil Lai thank you so much matlab enaa vadiya oil ee hee manu bhutt vadiya result milyaa he thank you thode enee vadiya oil Lai ....🥰🥰🥰🥰🥰🥰",
       name: "Happy customer",
-      role: "Hidden name",
+      role: "Confident Hair Owner",
     },
     {
       text: "Mam tohda oil mai 23 days phla lita c mnu 23 days ch boht bdia results aaye teh mere hairs di growth v hoggi🥹+ hairfall v khtm hogeyaa bs dead hairs hii niklde + shinning v aahgi g hairs teh♥ thank you so much mam rubberband v fisal jnda ehne silky hairs hogge🥰 bs mera tohde krke hairsfall ght gya mere bohtt hairfall hundii c  thank you 🙏🏻♥🥹",
       name: "Happy customer",
-      role: "Hidden name",
+      role: "Confident Hair Owner",
     },
     {
       text: "Mam oil 4-5 vaar use kite aa boht bdia results aaye aa ji mere hairs growth v bohtt ho rhii aa mere bohtt vdia hairs ho gye tysm didi ehna vdia oil provide krn lyi❤👍🏻",
       name: "Happy customer",
-      role: "Hidden name",
+      role: "Confident Hair Owner",
     },
   ];
 
