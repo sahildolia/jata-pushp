@@ -82,7 +82,7 @@ const Pricing = () => {
 
                 <button
                   onClick={() => handlePayment(400)}
-                  className="flex items-center mt-auto text-green-500 bg-white border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded"
+                  className="flex items-center mt-auto text-green-500 bg-white border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 hover:bg-green-600 rounded"
                 >
                   Claim Your Bottle
                   <svg
@@ -127,7 +127,7 @@ const Pricing = () => {
                 </h1>
                 <button
                   onClick={() => handlePayment(800)}
-                  className="flex items-center mt-auto bg-white text-green-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-green-600 rounded"
+                  className="flex items-center mt-auto bg-white text-green-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-green-600 hover:text-white rounded"
                 >
                   Claim Your Bottle
                   <svg
