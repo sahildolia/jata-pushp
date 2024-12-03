@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-
+import { useNavigate } from "react-router-dom";
 const Pricing = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+const navigate = useNavigate()
+  const handleCOD = () => {
+    navigate('/add-address')
+    console.log("Order placed with Cash on Delivery!");
+    // Your COD logic here (e.g., saving order details)
+    setIsPopupOpen(false);
+  };
   const loadScript = (src) => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -81,7 +89,7 @@ const Pricing = () => {
                 </h1>
 
                 <button
-                  onClick={() => handlePayment(400)}
+                  onClick={() => setIsPopupOpen(true)}
                   className="flex items-center mt-auto text-green-500 bg-white border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 hover:bg-green-600 rounded"
                 >
                   Claim Your Bottle
@@ -97,6 +105,31 @@ const Pricing = () => {
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
                 </button>
+                     {/* Payment Method Popup */}
+      {isPopupOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" onClick={() => setIsPopupOpen(false)}>
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-xl font-bold mb-4 text-green-500">Choose Payment Method</h2>
+            <div className="space-y-4">
+              <button
+                onClick={() => {
+                  handlePayment(400);
+                  setIsPopupOpen(false);
+                }}
+                className="w-full py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600"
+              >
+                Pay Online
+              </button>
+              <button
+                onClick={handleCOD}
+                className="w-full py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600"
+              >
+                Cash on Delivery
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
                 <p className="text-xs text-white mt-3">
                 &#10003; Strengthens Hair Roots
                 </p>
@@ -126,7 +159,7 @@ const Pricing = () => {
                   </span>
                 </h1>
                 <button
-                  onClick={() => handlePayment(800)}
+                 onClick={() => setIsPopupOpen(true)}
                   className="flex items-center mt-auto bg-white text-green-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-green-600 hover:text-white rounded"
                 >
                   Claim Your Bottle
@@ -142,6 +175,31 @@ const Pricing = () => {
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
                 </button>
+                      {/* Payment Method Popup */}
+      {isPopupOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" onClick={() => setIsPopupOpen(false)}>
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-xl font-bold mb-4 text-green-500">Choose Payment Method</h2>
+            <div className="space-y-4">
+              <button
+                onClick={() => {
+                  handlePayment(400);
+                  setIsPopupOpen(false);
+                }}
+                className="w-full py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600"
+              >
+                Pay Online
+              </button>
+              <button
+                onClick={handleCOD}
+                className="w-full py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600"
+              >
+                Cash on Delivery
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
                 <p className="text-xs text-white mt-3">
                 &#10003; Strengthens Hair Roots
                 </p>
