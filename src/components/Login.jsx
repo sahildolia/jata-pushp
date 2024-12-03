@@ -4,14 +4,16 @@ import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { useAuth } from "./AuthContext";
+import Loader from "./Loader";
 
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [isLoading, setIsLoading] = useState(false)
   const { setIsAuthenticated } = useAuth(); // Get the context function  const navigate = useNavigate();
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    debugger;
+  const handleSubmit = (e) => {debugger
+    setIsLoading(true)
     e.preventDefault();
     axios
       .post("https://jata-pushp-backend-3.onrender.com/login", {
@@ -21,9 +23,10 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         if (result.data === "Success!") {
+          setIsLoading(false)
           handleClick();
-          setIsAuthenticated(true); // Update the context state
-          setTimeout(() => navigate("/"), 2000); // Redirect after 2 seconds
+          setIsAuthenticated(true);
+          setTimeout(() => navigate("/"), 2000);
         } else {
           console.log("Something went wrong");
         }
@@ -86,7 +89,7 @@ const Login = () => {
               type="submit"
               className="w-full bg-green-500 text-white py-2.5 rounded-md font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             >
-              Login
+              {isLoading ? <Loader loaderwhite="#ffffff"/> : 'Login' }
             </button>
             <Link
               to="/reset-password"
