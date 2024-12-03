@@ -9,6 +9,7 @@ import SignUp from "./components/SignUp";
 import LostPassword from "./components/LostPassword";
 import Login from "./components/Login";
 import { AuthProvider } from "./components/AuthContext";
+import AddressForm from "./components/AddressForm";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,6 +22,7 @@ root.render(
           <Route path="/create-account" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/reset-password" element={<LostPassword />} />
+          <Route path="/add-address" element={<AddressForm />}/>
         </Routes>
       </BrowserRouter>
     </AuthProvider>
