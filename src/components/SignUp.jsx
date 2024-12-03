@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Loader from "./Loader";
 const SignUp = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [phone, setPhone] = useState();
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     debugger;
     e.preventDefault();
+    setIsLoading(true)
     axios
       .post("https://jata-pushp-backend-3.onrender.com/register", {
         name,
@@ -21,6 +24,7 @@ const SignUp = () => {
         phone,
       })
       .then((result) => {
+        setIsLoading(false)
         console.log(result);
         navigate("/login");
       })
@@ -110,7 +114,7 @@ const SignUp = () => {
               type="submit"
               className="w-full bg-green-500 text-white py-2.5 rounded-md font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             >
-              Sign up
+            { isLoading ?<Loader loaderwhite="#ffffff"/> : 'Sign up'}
             </button>
             <p className="text-center text-sm text-gray-600">
               Already registered?{" "}
