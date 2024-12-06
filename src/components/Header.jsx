@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+
 const Header = () => {
   const navigate = useNavigate();
-
+  const [showAlert, setShowAlert] = useState(true); // State to toggle alert visibility
+  const [userName, setUserName] = useState("")
+useEffect(() => {
+  const userName = localStorage.getItem("userName")
+  if(userName){
+    setUserName(userName)
+  }
+})
   const handleNavigate = (e) => {
     e.preventDefault();
     navigate("/login");
@@ -10,7 +22,33 @@ const Header = () => {
 
   return (
     <div>
-      <header className="text-white body-font bg-green-500 fixed w-full z-50 top-0 shadow-lg">
+      {/* Alert message */}
+      <div className={`${showAlert ? "block" : "hidden"}`}>
+        <Stack sx={{ width: "100%", position: "fixed", top: 0, zIndex: 1000 }}>
+          <Alert
+            severity="success"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => setShowAlert(false)}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
+          >
+            Welcome <strong>{userName}</strong>!
+          </Alert>
+        </Stack>
+      </div>
+
+      {/* Navbar */}
+      <header
+        className={`text-white body-font bg-green-500 fixed w-full z-50 transition-all ${
+          showAlert ? "top-10" : "top-0"
+        }`}
+      >
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <svg
